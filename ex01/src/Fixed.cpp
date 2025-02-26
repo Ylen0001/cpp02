@@ -6,7 +6,7 @@
 /*   By: ylenoel <ylenoel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 11:02:40 by ylenoel           #+#    #+#             */
-/*   Updated: 2025/02/24 17:09:19 by ylenoel          ###   ########.fr       */
+/*   Updated: 2025/02/26 15:11:58 by ylenoel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ Fixed::~Fixed(void)
 }
 
 /* Surcharge d'opérateur = pour handle la copie d'objet comportant
-des valeurs allouées sur la heap*/
+des valeurs allouées sur la heap */
 
 Fixed& Fixed::operator=(const Fixed& other)
 {

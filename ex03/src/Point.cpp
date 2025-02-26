@@ -1,32 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Point.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ylenoel <ylenoel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/20 15:06:13 by ylenoel           #+#    #+#             */
-/*   Updated: 2025/02/26 16:20:51 by ylenoel          ###   ########.fr       */
+/*   Created: 2025/02/26 16:27:03 by ylenoel           #+#    #+#             */
+/*   Updated: 2025/02/26 17:40:13 by ylenoel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/Fixed.hpp"
-#include <iostream>	
+#include "../includes/Point.hpp"
 
-int main(void)
+Point::Point() : x(0), y(0) {}
+
+Point::Point(const float x, const float y) : x(x), y(y) {}
+
+Point::Point(const Point& other) : x(other.x), y(other.y) {}
+
+Point& Point::operator=(const Point& other)
 {
-	Fixed		a;
-	Fixed const	b(Fixed(5.05f) * Fixed(2));
-	
-	std::cout << a << std::endl;
-	std::cout << ++a << std::endl;
-	std::cout << a << std::endl;
-	std::cout << a++ << std::endl;
-	std::cout << a << std::endl;
-	
-	std::cout << b << std::endl;
-	
-	std::cout << Fixed::max(a, b) << std::endl;
+	return;
+}
 
-	return (0);
+Fixed Point::get_x(void) const
+{
+	return(x);
+}
+
+Fixed Point::get_y(void) const
+{
+	return(y);
 }
