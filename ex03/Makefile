@@ -1,8 +1,8 @@
 NAME = Bsp
 CPP = c++
 RM = rm -rf
-CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -g3
-SRC = main.cpp Fixed.cpp Point.cpp
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -g3 -fPIE
+SRC = main.cpp Fixed.cpp Point.cpp Bsp.cpp
 OBJ = $(addprefix $(OBJ_DIR)/, $(notdir $(SRC:.cpp=.o)))
 SRC_DIR = src
 OBJ_DIR = obj
@@ -25,7 +25,7 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	@echo "$(QUARTZ)Compilation en cours...$(RESET)"
-	@$(CPP) $(CPPFLAGS) $(OBJ) -o $(NAME)
+	@$(CPP) $(CPPFLAGS) $(OBJ) -o $(NAME) -pie
 	@echo "$(COLOMBIA_BLUE)Exécutable '$(NAME)' crée!$(RESET)"
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp | $(OBJ_DIR)
